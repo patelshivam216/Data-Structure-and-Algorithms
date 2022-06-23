@@ -1,0 +1,19 @@
+i=j=0;
+n=size;
+k=window size 
+
+while(i<n){
+
+    DO SOME CALCULATION 
+
+    if(i-j+1<k){
+        i++;
+    }
+    else if(i-j+1==k){
+        DO CALCULATION FOR ANS
+        ----
+
+        DO CALCULATION FOR SLIDE THE WINDOW (UNCHANGE INITIAL CHANGE)
+    }
+
+}

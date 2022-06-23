@@ -1,0 +1,11 @@
+	gdb ./a
+	run
+	input
+	backtrace
+	fram #number 
+	print error
+	
+	
+	
+	edited from github now see changes 
+	

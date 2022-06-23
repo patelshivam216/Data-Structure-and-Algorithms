@@ -1,0 +1,19 @@
+i=j=0;
+n=size;
+k depends on condition
+
+while(i<n){
+
+    DO SOME CALCULATION 
+
+    if(if condition triggered){
+
+        COLLECT ANS 
+
+    }   
+    else if(condition > k){
+        
+        DO CALCULATION AND MAKE CONDITION < K
+    }
+
+}

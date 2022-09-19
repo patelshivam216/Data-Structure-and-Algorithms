@@ -1,0 +1,11 @@
+FINEST TRICK TO AVOID DUPLICATES
+
+lets say you have array with duplicates 
+A : 2 3 4 4 6 7 1 2
+
+Now what we do check it out
+set<int> st(A.begin() , A.end());
+A.assign(st.begin(),st.end());
+
+Now array do not have duplicate values 
+

@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void dfs(int v, vector<int> &depth, vector<int> graph[], int p = -1)
+{
+    for (auto child : graph[v])
+    {
+        if (p == child)
+            continue;
+        dfs(child, depth, graph, v);
+        depth[v] += depth[child]; // HERE WE JUST ADD DIRECTLY WITHOUT ADDING ONE BECAUSE WE ALREADY DONE THIS
+    }
+}
+
+void dfs_final(int v, vector<int> graph[], vector<int> depth, int &ans, int p = -1)
+{
+    for (auto child : graph[v])
+    {
+        if (child == p)
+            continue;
+        dfs_final(child, graph, depth, ans, v);
+    }
+
+    if (v != 1 and ((depth[v] >= 2) and (depth[v] % 2 == 0)))
+    {
+        ans += 1;
+    }
+}
+int Solution::solve(int A, vector<vector<int>> &B)
+{
+    int ans = 0;
+
+    // Ready graph represantation
+    int n = A;
+    vector<int> graph[n + 1];
+    for (int i = 0; i < B.size(); i++)
+    {
+        graph[B[i][0]].push_back(B[i][1]);
+        graph[B[i][1]].push_back(B[i][0]);
+    }
+
+    // depth its vertex vise
+    vector<int> depth(n + 1, 1); // one for itself
+    dfs(1, depth, graph);
+
+    // for calculation maximum edges whose depth+1 is even and Not to be source vartex
+    dfs_final(1, graph, depth, ans);
+
+    return ans;
+}
